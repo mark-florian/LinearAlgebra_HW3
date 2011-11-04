@@ -1,0 +1,51 @@
+To compile program, use the following:
+
+	javac *.java
+
+Once compiled, run my program with the
+following command:
+
+	java Main [filename]
+
+I have included 8 test input files of various
+dimensions and solutions. The solutions to these
+matrices are as follows:
+
+input1.txt = 5x5 1 solution
+input2.txt = 3x4 no solution
+input3.txt = 2x4 infinite solutions
+input4.txt = 5x5 infinite solutions
+input5.txt = 2x3 infinite solutions
+input6.txt = 4x2 1 solution
+input7.txt = 4x7 infinite solutinos
+input8.txt = 4x7 no solution
+
+The input files parse input according
+to the following:
+
+[number of rows]
+[number of columns]
+[solution]
+[m x n matrix]
+
+For example:
+
+3		// m-value
+4		// n-value
+1 2 3 4		// solution
+1 1 0		// matrix
+2 2 4		// matrix
+0 1 4		// matrix
+5 3 1		// matrix
+
+My procedure:
+
+First, I stored the input matrix into a matrix object and performed elimination
+on the matrix. At this point, I determined what class the matrix fell under using
+it's rank. I did this according to the chart in chapter 3 of the text labelled 
+'The four possibilities for equations depend on the rankr').
+
+From this point, I could limit the operations on the elimination matrix. For example,
+if I know it has 1 solution, I could simply do back-substitution to find solution.
+If I know it has infinite solutions, I could continue to find the reduced echelon for
+matrix and deternine to particular and special solutions.
